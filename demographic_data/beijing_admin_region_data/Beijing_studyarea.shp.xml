@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en">
+	  <Esri>
+		    <CreaDate>20150512</CreaDate>
+		    <CreaTime>10053300</CreaTime>
+		    <ArcGISFormat>1.0</ArcGISFormat>
+		    <ArcGISstyle>ISO 19139 Metadata Implementation Specification</ArcGISstyle>
+		    <SyncOnce>FALSE</SyncOnce>
+		    <DataProperties>
+			      <itemProps>
+				        <itemName Sync="TRUE">Beijing_studyarea</itemName>
+				        <nativeExtBox>
+					          <westBL Sync="TRUE">364471.162793</westBL>
+					          <eastBL Sync="TRUE">497679.146355</eastBL>
+					          <southBL Sync="TRUE">4365970.574058</southBL>
+					          <northBL Sync="TRUE">4470656.005550</northBL>
+					          <exTypeCode Sync="TRUE">1</exTypeCode>
+				        </nativeExtBox>
+				        <itemSize Sync="TRUE">0.012</itemSize>
+				        <itemLocation>
+					          <linkage Sync="TRUE">file://\\SUL-GISLAB\GIS_Shared\GIS_Lab\DATA\World_Urban_Expansion_1990_2000_Lincoln_Inst\Beijing\Beijing_studyarea.shp</linkage>
+					          <protocol Sync="TRUE">Local Area Network</protocol>
+				        </itemLocation>
+				        <imsContentType export="False"/>
+			      </itemProps>
+			      <coordRef>
+				        <type Sync="TRUE">Projected</type>
+				        <geogcsn Sync="TRUE">GCS_WGS_1984</geogcsn>
+				        <csUnits Sync="TRUE">Linear Unit: Meter (1.000000)</csUnits>
+				        <projcsn Sync="TRUE">WGS_1984_UTM_Zone_50N</projcsn>
+				        <peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.1'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_UTM_Zone_50N&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,500000.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,117.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,32650]]&lt;/WKT&gt;&lt;XOrigin&gt;-5120900&lt;/XOrigin&gt;&lt;YOrigin&gt;-9998100&lt;/YOrigin&gt;&lt;XYScale&gt;450445547.3910538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;32650&lt;/WKID&gt;&lt;LatestWKID&gt;32650&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml>
+			      </coordRef>
+			      <copyHistory>
+				        <copy date="20150512"
+                  dest="\\SUL-GISLAB\GIS_Shared\GIS_Lab\DATA\World_Urban_Expansion_1990_2000_Lincoln_Inst\SGC"
+                  source="Q:\World_Hydrosheds_USGS\SGC"
+                  time="10053300"/>
+			      </copyHistory>
+		    </DataProperties>
+		    <SyncDate>20150529</SyncDate>
+		    <SyncTime>15071000</SyncTime>
+		    <ModDate>20150529</ModDate>
+		    <ModTime>15071000</ModTime>
+		    <ArcGISProfile>ISO19139</ArcGISProfile>
+		    <scaleRange>
+			      <minScale>150000000</minScale>
+			      <maxScale>5000</maxScale>
+		    </scaleRange>
+	  </Esri>
+	  <mdLang>
+		    <languageCode value="eng"/>
+		    <countryCode Sync="TRUE" value="USA"/>
+   </mdLang>
+	  <mdChar>
+		    <CharSetCd value="004"/>
+	  </mdChar>
+	  <mdParentID>http://purl.stanford.edu/rr276tj2464.mods</mdParentID>
+	  <mdHrLv>
+		    <ScopeCd value="005"/>
+	  </mdHrLv>
+	  <distInfo>
+		    <distTranOps>
+         <onLineSrc>
+            <linkage>http://purl.stanford.edu/hg548kt7784</linkage>
+            <protocol>http</protocol>
+            <orFunct>
+               <OnFunctCd value="001"/>
+            </orFunct>
+            <orName>Beijing_studyarea.shp</orName>
+         </onLineSrc>
+      </distTranOps>
+		    <distributor>
+			      <distorCont>
+				        <rpOrgName>Stanford Geospatial Center</rpOrgName>
+				        <rpCntInfo>
+					          <cntAddress addressType="physical">
+						            <delPoint>Branner Earth Sciences Library</delPoint>
+						            <city>Stanford</city>
+						            <adminArea>California</adminArea>
+						            <postCode>94305</postCode>
+						            <eMailAdd>brannerlibrary@stanford.edu</eMailAdd>
+						            <delPoint>Mitchell Building, 2nd Floor</delPoint>
+						            <delPoint>397 Panama Mall</delPoint>
+					          </cntAddress>
+					          <cntPhone>
+						            <voiceNum tddtty="">650-723-2746</voiceNum>
+					          </cntPhone>
+				        </rpCntInfo>
+				        <displayName>Stanford Geospatial Center</displayName>
+				        <displayName>Stanford Geospatial Center</displayName>
+				        <role>
+					          <RoleCd value="005"/>
+				        </role>
+				        <displayName>Stanford Geospatial Center</displayName>
+			      </distorCont>
+		    </distributor>
+		    <distFormat>
+         <formatName Sync="TRUE">Shapefile</formatName>
+      </distFormat>
+   </distInfo>
+	  <dataIdInfo>
+		    <idCredit>Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion/.</idCredit>
+		    <themeKeys>
+			      <thesaName>
+				        <resTitle>lcsh</resTitle>
+				        <date>
+					          <reviseDate>2011-04-26T00:00:00</reviseDate>
+				        </date>
+				        <citId>
+					          <identCode>http://id.loc.gov/authorities/subjects.html</identCode>
+				        </citId>
+			      </thesaName>
+			      <keyword>Urbanization</keyword>
+			      <keyword>Metropolitan areas</keyword>
+			      <keyword>Cities and towns</keyword>
+			      <keyword>Land use</keyword>
+		    </themeKeys>
+		    <placeKeys>
+			      <thesaName>
+				        <resTitle>geonames</resTitle>
+				        <date>
+					          <reviseDate>2012-11-01T00:00:00</reviseDate>
+				        </date>
+				        <resEd>3.1</resEd>
+				        <citId>
+					          <identCode>http://www.geonames.org/ontology#</identCode>
+				        </citId>
+			      </thesaName>
+			      <keyword>Beijing (China)</keyword>
+		    </placeKeys>
+		    <idCitation>
+			      <citId>
+				        <identCode>http://purl.stanford.edu/hg548kt7784</identCode>
+         </citId>
+			      <collTitle>Atlas of Urban Expansion</collTitle>
+			      <date>
+				        <pubDate>2012-01-01T00:00:00</pubDate>
+			      </date>
+			      <resTitle>Administrative Boundaries, Beijing, China, 1990</resTitle>
+			      <citRespParty>
+				        <rpIndName>Angel, Shlomo</rpIndName>
+				        <role>
+					          <RoleCd value="006"/>
+				        </role>
+			      </citRespParty>
+			      <citRespParty>
+				        <rpIndName>Parent, Jason</rpIndName>
+				        <role>
+					          <RoleCd value="006"/>
+				        </role>
+			      </citRespParty>
+			      <citRespParty>
+				        <rpIndName>Civco, Daniel L.</rpIndName>
+				        <role>
+					          <RoleCd value="006"/>
+				        </role>
+			      </citRespParty>
+			      <citRespParty>
+				        <rpIndName>Blei, Alejandro M</rpIndName>
+				        <role>
+					          <RoleCd value="006"/>
+				        </role>
+			      </citRespParty>
+			      <citRespParty>
+				        <rpOrgName>Lincoln Institute of Land Policy</rpOrgName>
+				        <role>
+					          <RoleCd value="010"/>
+				        </role>
+				        <rpCntInfo>
+					          <cntAddress addressType="">
+						            <city>Cambridge</city>
+						            <adminArea>MA</adminArea>
+						            <country>US</country>
+					          </cntAddress>
+				        </rpCntInfo>
+			      </citRespParty>
+			      <otherCitDet>These data were downloaded from the Atlas of Urban Expansion website (May 2015) http://www.lincolninst.edu/subcenters/atlas-urban-expansion/</otherCitDet>
+			      <presForm>
+            <PresFormCd Sync="TRUE" value="005"/>
+         </presForm>
+      </idCitation>
+		    <dataLang>
+			      <languageCode value="eng"/>
+			      <countryCode Sync="TRUE" value="USA"/>
+      </dataLang>
+		    <dataChar>
+			      <CharSetCd value="004"/>
+		    </dataChar>
+		    <idPurp>The Atlas of Urban Expansion provides the geographic and quantitative dimensions of urban expansion and its key attributes in cities the world over. The data and images are available for free downloading, for scholars, public officials, planners, those engaged in international development, and concerned citizens. The global empirical evidence presented here is critical for an intelligent discussion of plans and policies to manage urban expansion everywhere. This resource provides both the conceptual framework and, for the first time, the basic empirical data and quantitative dimensions of past, present, and future urban expansion in cities around the world that are necessary for making minimal preparations for the massive urban growth expected in the coming decades.</idPurp>
+		    <idAbs>This polygon layer establishes the administrative boundaries of Beijing, China, otherwise known as the study area. These data are part of the Atlas of Urban Expansion.</idAbs>
+		    <tempKeys>
+			      <keyword>1990</keyword>
+		    </tempKeys>
+		    <idStatus>
+			      <ProgCd value="001"/>
+		    </idStatus>
+		    <dataExt>
+			      <geoEle>
+				        <GeoBndBox esriExtentType="search">
+					          <exTypeCode>1</exTypeCode>
+					          <westBL Sync="TRUE">115.403517</westBL>
+               <eastBL Sync="TRUE">116.973029</eastBL>
+               <northBL Sync="TRUE">40.386493</northBL>
+               <southBL Sync="TRUE">39.432627</southBL>
+            </GeoBndBox>
+			      </geoEle>
+		    </dataExt>
+		    <dataExt>
+			      <exDesc>ground condition</exDesc>
+			      <tempEle>
+				        <TempExtent>
+					          <exTemp>
+						            <TM_Period>
+							              <tmBegin>1990-01-01T00:00:00</tmBegin>
+							              <tmEnd>2000-12-31T00:00:00</tmEnd>
+						            </TM_Period>
+					          </exTemp>
+				        </TempExtent>
+			      </tempEle>
+			      <geoEle/>
+      </dataExt>
+		    <aggrInfo>
+			      <assocType>
+				        <AscTypeCd value="002"/>
+			      </assocType>
+			      <initType>
+				        <InitTypCd value="002"/>
+			      </initType>
+			      <aggrDSName>
+				        <resTitle>Atlas of Urban Expansion</resTitle>
+				        <date>
+					          <pubDate>2012-01-01T00:00:00</pubDate>
+				        </date>
+				        <citId>
+					          <identCode>http://purl.stanford.edu/rr276tj2464</identCode>
+				        </citId>
+				        <citRespParty>
+					          <rpIndName>Angel, Shlomo</rpIndName>
+					          <role>
+						            <RoleCd value="006"/>
+					          </role>
+					          <displayName>Angel, Shlomo</displayName>
+				        </citRespParty>
+				        <citRespParty>
+					          <rpIndName>Parent, Jason</rpIndName>
+					          <role>
+						            <RoleCd value="006"/>
+					          </role>
+					          <displayName>Parent, Jason</displayName>
+				        </citRespParty>
+				        <citRespParty>
+					          <rpIndName>Civco, Daniel L.</rpIndName>
+					          <role>
+						            <RoleCd value="006"/>
+					          </role>
+					          <displayName>Civco, Daniel L.</displayName>
+				        </citRespParty>
+				        <citRespParty>
+					          <rpIndName>Blei, Alejandro M</rpIndName>
+					          <role>
+						            <RoleCd value="006"/>
+					          </role>
+					          <displayName>Blei, Alejandro M</displayName>
+				        </citRespParty>
+				        <citRespParty>
+					          <rpOrgName>Lincoln Institute of Land Policy</rpOrgName>
+					          <role>
+						            <RoleCd value="010"/>
+					          </role>
+					          <rpCntInfo>
+						            <cntAddress addressType="">
+							              <city>Cambridge</city>
+							              <adminArea>MA</adminArea>
+						            </cntAddress>
+					          </rpCntInfo>
+				        </citRespParty>
+			      </aggrDSName>
+		    </aggrInfo>
+		    <idPoC>
+			      <rpOrgName>Lincoln Institute of Land Policy</rpOrgName>
+			      <role>
+				        <RoleCd value="007"/>
+			      </role>
+			      <displayName>Lincoln Institute of Land Policy</displayName>
+			      <rpCntInfo>
+				        <cntAddress addressType="">
+					          <delPoint>113 Brattle St.</delPoint>
+					          <city>Cambridge</city>
+					          <adminArea>MA</adminArea>
+					          <eMailAdd>help@lincolninst.edu</eMailAdd>
+					          <country>US</country>
+				        </cntAddress>
+			      </rpCntInfo>
+		    </idPoC>
+		    <suppInfo>The Atlas of Urban Expansion is also available as a printed book. The Atlas of Urban Expansion accompanies the Policy Focus Report Making Room for a Planet of Cities, a comprehensive and original analysis of the quantitative dimensions of past, present, and future global urban land cover, culminating in a proposed new paradigm for preparing for explosive growth in cities the world over. Further detail of that analysis is available in three working papers available for downloading: The Persistent Decline in Urban Densities, The Fragmentation of Urban Footprints, and A Planet of Cities: Country Estimates and Projections of Urban Land Cover, 2000-2050. A forthcoming book, titled The Expansion of Cities, bringing together the analysis of the maps in the Atlas of Urban Expansion within a broader discussion of urban expansion in a global and historical perspective, will be published by the Lincoln Institute in 2012.</suppInfo>
+		    <resConst>
+			      <LegConsts>
+				        <useLimit>Use of data should include the following citation: Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion.</useLimit>
+			      </LegConsts>
+		    </resConst>
+		    <resMaint>
+			      <maintFreq>
+				        <MaintFreqCd value="012"/>
+			      </maintFreq>
+		    </resMaint>
+		    <tpCat>
+			      <TopicCatCd value="016"/>
+		    </tpCat>
+		    <tpCat>
+			      <TopicCatCd value="010"/>
+		    </tpCat>
+		    <envirDesc Sync="TRUE">Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.2.2.3552</envirDesc>
+      <spatRpType>
+         <SpatRepTypCd Sync="TRUE" value="001"/>
+      </spatRpType>
+   </dataIdInfo>
+	  <dataSetURI>http://purl.stanford.edu/hg548kt7784</dataSetURI>
+   <mdFileID>edu.stanford.purl:hg548kt7784</mdFileID>
+   <mdContact>
+		    <rpOrgName>Stanford Geospatial Center</rpOrgName>
+		    <rpCntInfo>
+			      <cntAddress addressType="both">
+				        <delPoint>Mitchell Bldg. 2nd floor</delPoint>
+				        <city>Stanford</city>
+				        <adminArea>California</adminArea>
+				        <postCode>94305</postCode>
+				        <eMailAdd>brannerlibrary@stanford.edu</eMailAdd>
+				        <country>US</country>
+				        <delPoint>397 Panama Mall</delPoint>
+			      </cntAddress>
+			      <cntPhone>
+				        <voiceNum tddtty="">650-723-2746</voiceNum>
+			      </cntPhone>
+		    </rpCntInfo>
+		    <displayName>Stanford Geospatial Center</displayName>
+		    <displayName>Stanford Geospatial Center</displayName>
+		    <role>
+			      <RoleCd value="007"/>
+		    </role>
+	  </mdContact>
+	  <dqInfo>
+		    <dataLineage>
+			      <statement>Land cover maps were derived from satellite imagery of 120 cities and metropolitan areas in two time periods, one circa 1990 and one circa 2000.
+
+In an earlier 2005 study, the Lincoln Institute identified a total of 3,945 large cities with populations of 100,000 or more that were home to a total of 2.12 billion people or three-quarters of the world's urban population in the year 2000. The global sample of 120 cities is a stratified sample from this universe (Angel et al. 2005, chapter 2). It includes cities from nine geographic regions, four population size classes, and four per capita income classes. 
+
+For each city in this sample, the Lincoln Institute obtained two medium-resolution Landsat satellite images, one for each time period. These images were classified into built-up and non-built-up 30x30 meter pixels, using a thematic extraction algorithm.
+
+Using 10,000 Google Earth validation sites, Potere et al. (2009) later reported that pixels identified as built-up in our sample were found to be built-up in Google Earth 91 percent of the time and those identified in Google Earth as urban were identified in our sample 89 percent of the time, a relatively high level of accuracy.</statement>
+		    </dataLineage>
+	  </dqInfo>
+	  <mdHrLvName Sync="TRUE">dataset</mdHrLvName>
+   <refSysInfo>
+      <RefSystem>
+         <refSysID>
+            <identCode Sync="TRUE" code="32650"/>
+            <idCodeSpace Sync="TRUE">EPSG</idCodeSpace>
+            <idVersion Sync="TRUE">8.2.6</idVersion>
+         </refSysID>
+      </RefSystem>
+   </refSysInfo>
+   <spatRepInfo>
+      <VectSpatRep>
+         <geometObjs Name="Beijing_studyarea">
+            <geoObjTyp>
+               <GeoObjTypCd value="002" Sync="TRUE"/>
+            </geoObjTyp>
+            <geoObjCnt Sync="TRUE">1</geoObjCnt>
+         </geometObjs>
+         <topLvl>
+            <TopoLevCd value="001" Sync="TRUE"/>
+         </topLvl>
+      </VectSpatRep>
+   </spatRepInfo>
+   <spdoinfo>
+      <ptvctinf>
+         <esriterm Name="Beijing_studyarea">
+            <efeatyp Sync="TRUE">Simple</efeatyp>
+            <efeageom code="4" Sync="TRUE"/>
+            <esritopo Sync="TRUE">FALSE</esritopo>
+            <efeacnt Sync="TRUE">1</efeacnt>
+            <spindex Sync="TRUE">FALSE</spindex>
+            <linrefer Sync="TRUE">FALSE</linrefer>
+         </esriterm>
+      </ptvctinf>
+   </spdoinfo>
+   <eainfo>
+      <detailed Name="Beijing_studyarea">
+         <enttyp>
+            <enttypl Sync="TRUE">Beijing_studyarea</enttypl>
+            <enttypt Sync="TRUE">Feature Class</enttypt>
+            <enttypc Sync="TRUE">1</enttypc>
+         </enttyp>
+         <attr>
+            <attrlabl Sync="TRUE">FID</attrlabl>
+            <attalias Sync="TRUE">FID</attalias>
+            <attrtype Sync="TRUE">OID</attrtype>
+            <attwidth Sync="TRUE">4</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+            <attrdef Sync="TRUE">Internal feature number.</attrdef>
+            <attrdefs Sync="TRUE">Esri</attrdefs>
+            <attrdomv>
+               <udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+            </attrdomv>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">Shape</attrlabl>
+            <attalias Sync="TRUE">Shape</attalias>
+            <attrtype Sync="TRUE">Geometry</attrtype>
+            <attwidth Sync="TRUE">0</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+            <attrdef Sync="TRUE">Feature geometry.</attrdef>
+            <attrdefs Sync="TRUE">Esri</attrdefs>
+            <attrdomv>
+               <udom Sync="TRUE">Coordinates defining the features.</udom>
+            </attrdomv>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">Id</attrlabl>
+            <attalias Sync="TRUE">Id</attalias>
+            <attrtype Sync="TRUE">Integer</attrtype>
+            <attwidth Sync="TRUE">6</attwidth>
+            <atprecis Sync="TRUE">6</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">p90</attrlabl>
+            <attalias Sync="TRUE">p90</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">p00</attrlabl>
+            <attalias Sync="TRUE">p00</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">pT1</attrlabl>
+            <attalias Sync="TRUE">pT1</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">pT2</attrlabl>
+            <attalias Sync="TRUE">pT2</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">p_T1_SA</attrlabl>
+            <attalias Sync="TRUE">p_T1_SA</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+         <attr>
+            <attrlabl Sync="TRUE">p_T2_SA</attrlabl>
+            <attalias Sync="TRUE">p_T2_SA</attalias>
+            <attrtype Sync="TRUE">Double</attrtype>
+            <attwidth Sync="TRUE">19</attwidth>
+            <atprecis Sync="TRUE">0</atprecis>
+            <attscale Sync="TRUE">0</attscale>
+         </attr>
+      </detailed>
+   </eainfo>
+   <mdDateSt Sync="TRUE">20150529</mdDateSt>
+   <Binary>
+      <Thumbnail>
+         <Data EsriPropertyType="PictureX">/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACFAMgDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iii
+gAooooAKKKKACiiigAoopskgiQu2cdMDuTwKG7AOoqv9pIGDE3mdgOQfxpslwWgZSNkmVBwezHGQ
+fz/KsvbU3sx2ZO0saZ3yKuOuTimG7t+0qsfRPmP5ColjRMbUUY6YFOrieYPpErkJo5UlXKHOOoIw
+R+FPqoQQwdMBxx9R6Gpo5w7bGUo/XHUH6GumhiY1VZ6MTjYlooorpJCiiigAooooAKKKKACiiigA
+ooooAKKKKACiiigAooooAKqzSrMojjy3zA7sHGAQevfpS3DiRhCCSvO/H8s/0orgxWK5bwiXGPUK
+QqpYMQCR0OOlLRXllhRRRSAKawbcjLjchyAe/BH9adRVRk4vmQC/agyjy1LMeoPG36n1pRdRgYlI
+jb0Y9fp602iu1Y+d7taE8iJDcRiMPuyG4A7k+mKiMlwTkGNR6FScfjkU1IwhJyT1xntk5OPxp9Kr
+jZy+DQFHuKtwU4mHH99QcfiO1WAQRkHINVqSNjC4Un90eAD/AAnjA+lbYbFuT5agnHsWqKKK9AgK
+KKKACiiigAooprusaFmOAKAHVE9xChIMi7h/CDk/lUTNLIc7zGOwXGfxpEXYuMk9yT3J6muGpjoR
+0hqUokn2pR96KVT2+XOfyzj8agRXjYSLjec7t3O4Z7n1/SpaK454upKz2sVyoZGCNxxtDMWCnqM/
+/XzT6KK55Scm2ygoooqQCiiigAooooAKKKKACiiigApkql4nUHBIIB9KfRTTtqBPG4kjVwMBgDTq
+htf+PWL0CgA+o7H8etTV9EndXMQooopgFFFFABVMEyOzsScMQo7DBx/n61akDGJwhw5U7SexqqN0
+W1JECdlIOQfx9a48bz8lor1KjuPooorxzQKKKKACiiigAooooAKKKKACiiigAooooAKaxbciIAWY
+45PQY606kXAuk3dMEL9f/wBQP61tQgp1FGWwnsO+zN3nkz7Bcfypfsin78krf8C2/wDoOKnor2VR
+pr7KM7sQAKAAAAOABS0UVqIKKKKACiiigApGUMpVgCD1BpaKAKUBJhUNncvytk9xwakqPBt2SJsF
+TkIQecD1FSV4FWDhNpo1TugooorIYUUUUAFFFFABRRRQAUUUUAFFFFABTWBDxuBnY2cevBH9adRV
+Rk4yUl0AmjlSUEo2cdR0I+op9VGXJDAlWHRh1p0LuJfLdy+VypIGeOvT6j9a9eji41GovRmbjYs0
+UUV1khRRRQAUUUUANk3+W3l434O3PTPaqWEZwJVkMh6F1PB9j0H4VfqvcnJiXuXyfXAB/rgfjXNi
+Yc0G72sOL1GLGiZ2qAT1IHJ+tOoorxW77moUUUUgCiiigAooooAKKKKACiiigAooooAKKKKACmfN
+JKnloTsfluw9frxmn060A+zq38Tcv/vd/wDD8K7MHTU53fQmTsieiiivYMwooooAKKKKACoZomZg
+6Y3gYwTgEVNRUziprllsBTjkWRcr+IPUH0PoafUkkAkbcGZGxjcuOR+NN+yR9zIT3PmMP5GvNlgJ
+X0ehpzjaKjjbBMbN84JwD1254P5Y5qSuGcXGTiygoqOaQIhAYeYR8ik8k0pEwcRAZbP3yvG38O/b
++lXCjOavFCbSH0U0tIv34XA9V+Yfpz+lJ5uDt2OHPRSuCfp2NDo1FvFhdD6KYXdSN8LqCcbiRgfk
+afUzhKDtJWHe4UUUVABTQ6FygdSw6jPIoVTNKy7iqKBnb1J9M/TH51O0EbIqhdu37u3jH+fSu2lg
+5ThzXt2JcrEVFMms3eMqsu/2kAx+g/oakNoowIyI1P3lUYB+npR9RqWDmQxU86VkYkKqgnBIJznu
+PpVmONYkCIMAZPXNJHGkS4RcZOT6k+9Pr0aNFUopdSG7hRRRWwgooooAKKKKACiiigAooooAinjL
+xjb99SCP6/pUKrJK4UxuifxEkD8Bg1borGdCE5KUug02hiRRxAhEVc9cDGafRRWwgooooAZKnmQv
+HnG5SM/Wq8biRAcYPde4Poat1HJCsh3fdccBh1rmxOH9slZ6oqLsRHgZpsayTKGBEaEZHdiP5D9a
+TMw4MDkjqVIxn2yaLdttx5ahwpUkqwPByOmfqelcWHoWnapFlN6aFpEWNAqjAH606iivWMwooooA
+KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAo
+oooAKKKKAP/Z</Data>
+      </Thumbnail>
+   </Binary>
+</metadata>

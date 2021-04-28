@@ -1,0 +1,41 @@
+Source: http://www.stats.gov.cn/tjsj/ndsj/renkoupucha/2000jiedao/jiedao.htm
+
+To cite: 
+Wu, K., Long, Y., Mao, Q., & Liu, X. (2015). Mushrooming Jiedaos, Growing Cities: An Alternative Perspective on Urbanizing China. Environment and Planning A, 47, 1-2.
+1.Mao Q, Long Y, & Wu K. (2015). Spatio-Temporal Changes of Population Density and Exploration on Urbanization Pattern in China: 2000-2010. City Planning Review, 39(2): 38-43. [毛其智, 龙瀛, 吴康. 2015. 中国人口密度时空演变与城镇化空间格局初探——从2000年到2010年. 城市规划, 39(2):38-43.]
+
+Attribute descriptions
+TID: township ID
+POP: total population of the township
+M: males
+F: femals
+AGE0: aged 0-14
+AGE15: aged 15-64
+AGE65: aged 65+
+ADDRESS: address of the township
+
+
+We are putting the descriptions for the 2000 census in the file. The descriptions also apply to the 2010 census data we are sharing.
+
+
+地区别	总人口	家庭户户数	家庭户总人口	分年龄人口	居住本
+合  计	男	女	合  计	男	女	0-14岁	15-64岁	65岁及以上	地，户口
+ 小  计	男	女	 小  计	男	女	 小  计	男	女	在本地
+
+编 辑 说 明
+ 
+根据2000年第五次全国人口普查数据处理资料，我们编辑整理了《中国乡、镇、街道人口资料》。该资料是2000年人口普查专题数据资料之一，是一套反映中国小区域人口分布和人口规模的数据集，对于进行微观人口研究，加强人口管理和开展社会调查提供了丰富的基础数据。为方便读者使用这套资料，现将编辑中的有关问题说明如下：
+一、本书所有数据均为普查登记的2000年11月1日常住人口资料。在本乡、镇、街道普查登记的常住人口包括：
+1．居住在本乡、镇、街道，并已在本乡、镇、街道登记了常住户口的人；
+2．在本乡、镇、街道居住半年以上，常住户口在本乡、镇、街道以外的人；
+3．在本乡、镇、街道居住不满半年，但已离开常住户口登记地半年以上的人；
+4．普查时居住在本乡、镇、街道，常住户口待定的人；
+5．原住本乡、镇、街道，现在国外工作或学习，暂无户口的人。
+二、本书所有数据都是根据实际登记的资料汇总的，没有考虑普查登记误差，也未包括中国人民解放军现役军人。《2000年第五次全国人口普查主要数据公报》公布的大陆31个省、自治区、直辖市总人口和中国人民解放军现役军人126583万人中包括了按登记误差估计的漏登人口。
+三、本书中“居住本地，户口在本地”中的“本地”是指本乡、镇、街道。
+由于时间紧，本资料难免存在不足之处，请读者指正。
+ 
+ 
+编   者
+                                            2002年8月1日
+http://cyfd.cnki.com.cn/N2013030152.htm

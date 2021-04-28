@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin/>
+        <origin/>
+        <origin/>
+        <origin/>
+        <pubdate>20120101</pubdate>
+        <title>Administrative Boundaries, Beijing, China, 1990</title>
+        <geoform>vector digital data</geoform>
+        <pubinfo>
+          <pubplace/>
+          <publish>Lincoln Institute of Land Policy</publish>
+        </pubinfo>
+        <othercit>These data were downloaded from the Atlas of Urban Expansion website (May 2015) http://www.lincolninst.edu/subcenters/atlas-urban-expansion/</othercit>
+        <onlink>http://purl.stanford.edu/hg548kt7784</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin/>
+            <origin/>
+            <origin/>
+            <origin/>
+            <pubdate>20120101</pubdate>
+            <title>Atlas of Urban Expansion</title>
+            <pubinfo>
+              <pubplace/>
+              <publish>Lincoln Institute of Land Policy</publish>
+            </pubinfo>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This polygon layer establishes the administrative boundaries of Beijing, China, otherwise known as the study area. These data are part of the Atlas of Urban Expansion.</abstract>
+      <purpose>The Atlas of Urban Expansion provides the geographic and quantitative dimensions of urban expansion and its key attributes in cities the world over. The data and images are available for free downloading, for scholars, public officials, planners, those engaged in international development, and concerned citizens. The global empirical evidence presented here is critical for an intelligent discussion of plans and policies to manage urban expansion everywhere. This resource provides both the conceptual framework and, for the first time, the basic empirical data and quantitative dimensions of past, present, and future urban expansion in cities around the world that are necessary for making minimal preparations for the massive urban growth expected in the coming decades.</purpose>
+      <supplinf>The Atlas of Urban Expansion is also available as a printed book. The Atlas of Urban Expansion accompanies the Policy Focus Report Making Room for a Planet of Cities, a comprehensive and original analysis of the quantitative dimensions of past, present, and future global urban land cover, culminating in a proposed new paradigm for preparing for explosive growth in cities the world over. Further detail of that analysis is available in three working papers available for downloading: The Persistent Decline in Urban Densities, The Fragmentation of Urban Footprints, and A Planet of Cities: Country Estimates and Projections of Urban Land Cover, 2000-2050. A forthcoming book, titled The Expansion of Cities, bringing together the analysis of the maps in the Atlas of Urban Expansion within a broader discussion of urban expansion in a global and historical perspective, will be published by the Lincoln Institute in 2012.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19900101</begdate>
+          <enddate>20001231</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Unknown</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>115.403517</westbc>
+        <eastbc>116.973029</eastbc>
+        <northbc>40.386493</northbc>
+        <southbc>39.432627</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>lcsh</themekt>
+        <themekey>Urbanization</themekey>
+        <themekey>Metropolitan areas</themekey>
+        <themekey>Cities and towns</themekey>
+        <themekey>Land use</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>society</themekey>
+        <themekey>imageryBaseMapsEarthCover</themekey>
+      </theme>
+      <place>
+        <placekt>geonames</placekt>
+        <placekey>Beijing (China)</placekey>
+      </place>
+      <temporal>
+        <tempkt>None</tempkt>
+        <tempkey>1990</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>Use of data should include the following citation: Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Lincoln Institute of Land Policy</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>unknown</addrtype>
+          <address>113 Brattle St.</address>
+          <city>Cambridge</city>
+          <state>MA</state>
+          <country>US</country>
+        </cntaddr>
+        <cntemail>help@lincolninst.edu</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion/.</datacred>
+    <native>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.2.2.3552</native>
+  </idinfo>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>GT-polygon composed of chains</sdtstype>
+        <ptvctcnt>1</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Beijing_studyarea</enttypl>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>Esri</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>Esri</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Id</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>p90</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>p00</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>pT1</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>pT2</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>p_T1_SA</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>p_T2_SA</attrlabl>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Stanford Geospatial Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>physical</addrtype>
+          <address>Branner Earth Sciences Library</address>
+          <address>Mitchell Building, 2nd Floor</address>
+          <address>397 Panama Mall</address>
+          <city>Stanford</city>
+          <state>California</state>
+          <postal>94305</postal>
+        </cntaddr>
+        <cntvoice>650-723-2746</cntvoice>
+        <cntemail>brannerlibrary@stanford.edu</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Use of data should include the following citation: Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion.</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20150529</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Stanford Geospatial Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>Mitchell Bldg. 2nd floor</address>
+          <address>397 Panama Mall</address>
+          <city>Stanford</city>
+          <state>California</state>
+          <postal>94305</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>650-723-2746</cntvoice>
+        <cntemail>brannerlibrary@stanford.edu</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+  </metainfo>
+</metadata>
