@@ -8,8 +8,8 @@ def process_graphs(metric, labels, title="Equity Measure"):
     width = 0.35  # the width of the bars
 
     fig, ax = plt.subplots()
-    print(len(x))
-    print(len(metric))
+    # print(len(x))
+    # print(len(metric))
     ax.bar(x - width / 2, metric, width)
 
     ax.set_title(title)

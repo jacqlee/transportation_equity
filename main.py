@@ -1,20 +1,25 @@
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
-import osmnx as ox
 import numpy as np
-import skmob
 import math
+from math import cos, sin
 from shapely import geometry
-from skmob.tessellation import tilers
+# from skmob.tessellation import tilers
 from datetime import datetime
 from equity_graphs import process_graphs
+from equity_gap import equity_gap
 from numpy.core.function_base import linspace
+from differential_privacy import addLaplaceNoise
 
 crs = 'epsg:4326'
 mode_names = ['walk', 'bike', 'bus', 'car', 'subway','train', 'airplane', 'boat', 'run', 'motorcycle', 'taxi']
 mode_ids = {s: i + 1 for i, s in enumerate(mode_names)}
+# spatial cloaking distance in km
 p_distance = 0
+# differential privacy epsilon value (greater e -> less privacy)
+differential_epsilon = 0.0001
+
 
 def poly_reverse_xy(poly):
     new_polys = []
@@ -33,71 +38,65 @@ def poly_reverse_xy(poly):
         return new_polys[0]
 
 
-def equity_gap(grid_gdf, trips_gdf, start_time, end_time, demo_relevant_cols=tuple(["F"]), urban_vit_cols=tuple(["y-HOUSINGP"]), e=0.5):
+def polar_coordinates(point, center_point):
+    r = coord_distance(center_point.x, center_point.y, point.x, point.y)
+    a1 = np.arctan2(center_point.x, center_point.y)
+    a2 = np.arctan2(point.x, point.y)
+    theta = np.rad2deg((a1-a2) % (2*np.pi))
+    return [r, theta]
+
+
+def polar_to_coordinates(r, theta, center_point):
+    center_lat = np.radians(center_point.x)
+    center_lon = np.radians(center_point.y)
+
+    r2 = np.radians(r)
+    theta2 = np.radians(theta)
+
+    b = math.asin(sin(r2)*sin(theta2))
+    c = 2*math.atan((math.tan(0.5*(r2-b))*(sin(0.5*(math.pi/2 + theta2))/sin(0.5*(math.pi/2 - theta2)))))
+    # c = 2 * math.atan((math.tan(np.radians(0.5 * (r - b)) * (sin(0.5 * (math.pi / 2 + theta)) / sin(0.5 * (math.pi / 2 - theta)))))
+
+    latitude = center_lat + b
+    longitude = center_lon + c
+    return geometry.Point(np.degrees(latitude), np.degrees(longitude))
+
+
+def process_beijing_trips(trip_type=0, save_od_df=False, privacy_scheme=0):
     """
-    Calculates the equity gap in the data frame for income
-    :param grid_gdf: GeoDataFrame object for geographic grid with demographic information
-    :param trips_filename: GeoDataFrame object for trips
-    :param demo_relevant_cols: columns in grid_gdf for comparison ratio with POP column
-    :param urban_vit_cols: columns in grid_gdf for comparison with median (urban vitality data)
-    :param start_time: starting time for period examined
-    :param end_time: end time for period examined
-    :return: equity_gap
+
+    :param trip_type:
+    :param save_od_df:
+    :param privacy_scheme: 0 if none, 1 if spatial cloaking, 2 if geo-indistinguishability/differential privacy
+    :return:
     """
-    window_trips_gdf = trips_gdf.loc[trips_gdf["time"] >= start_time]
-    window_trips_gdf = window_trips_gdf.loc[window_trips_gdf["time"] <= end_time]
-    df = gpd.sjoin(window_trips_gdf, grid_gdf)
-
-    block_year_month_counts = df.groupby(["block", "year", "month"]).size()
-    avg_trips = pd.DataFrame(block_year_month_counts.groupby("block").mean(), columns=["avg_trips"])
-    # type(avg_trips)
-    # .groupby("block").mean()
-    cols = ["block", "POP"]
-    cols.extend(demo_relevant_cols)
-    cols.extend(urban_vit_cols)
-    simple_df = df[cols]
-    new_df = simple_df.join(avg_trips, on="block").fillna(0)
-
-    counts = df.groupby("block").size()
-    N = len(df.groupby("block").groups)
-    # N = df.groupby("block").size()
-    avg = counts.mean()
-
-    equity_measures = {}
-
-    if e < 1:
-        atkinson = 1 - ((counts.apply(lambda y: y**(1-e)).sum()/N)**(1/(1-e))/avg)
-    else:
-        atkinson = 1 - ((counts.sum())**(1/N))/avg
-    equity_measures["atkinson"] = atkinson
-
-    for metric in demo_relevant_cols:
-        ratio = new_df[metric]/new_df["POP"]
-        disadv_num = new_df["avg_trips"].rmul(ratio).sum()
-        disadv_den = new_df["POP"].rmul(ratio).sum()
-
-        adv_num = new_df["avg_trips"].rmul(1 - ratio).sum()
-        adv_den = new_df["POP"].rmul(1-ratio).sum()
-
-        equity_measures[metric + "_gap"] = (adv_num/adv_den) - (disadv_num/disadv_den)
-
-    for metric in urban_vit_cols:
-        quart = new_df[metric].quantile(0.25)
-        adv_group = new_df.loc[new_df[metric] >= quart]
-        disadv_group = new_df.loc[new_df[metric] < quart]
-        equity_measures[metric + "_gap"] = adv_group["avg_trips"].sum()/adv_group["POP"].sum() - disadv_group["avg_trips"].sum()/disadv_group["POP"].sum()
-
-    return equity_measures
-
-
-def process_beijing_trips(trip_type=0):
     df = pd.read_pickle("geolife.pkl")
     if trip_type != 0:
         #   Specified trip type
         df = df.loc[df['label'] == trip_type]
 
-    df = df.loc[df.index == 0]
-    trip_geometries = [geometry.Point(xy) for xy in zip(df.lat, df.lon)]
+    start_points = df.loc[df.index == 0].reset_index(drop=True)
+
+    ind = df.index.append(pd.Int64Index([0])).get_loc(0)
+    start_ind = list(filter(lambda i: ind[i], range(len(ind))))
+    end_ind = list(j - 1 for j in start_ind)
+    end_ind = end_ind[1:]
+
+    end_points = df.iloc[end_ind].reset_index()
+    end_points.rename(columns={"index": "endpt_stamp"}, inplace=True)
+
+    df = start_points.merge(end_points, left_index=True, right_index=True)
+
+    if trip_type == 0 and save_od_df:
+        pd.to_pickle("geolife_od.pkl", protocol=2)
+
+    trip_ogeometries = [geometry.Point(xy) for xy in zip(df.lat_x, df.lon_x)]
+    trip_dgeometries = [geometry.Point(xy) for xy in zip(df.lat_y, df.lon_y)]
+    trip_geometries = [geometry.MultiPoint(od) for od in zip(trip_ogeometries, trip_dgeometries)]
+
+    df["origin"] = trip_ogeometries
+    df["destination"] = trip_dgeometries
+
     points = gpd.GeoDataFrame(df, crs=crs, geometry=trip_geometries)
 
     bounding_box = [(39.77750000, 116.17944444), (39.77750000, 116.58888889), (40.04722222, 116.58888889),
@@ -107,38 +106,87 @@ def process_beijing_trips(trip_type=0):
     spoly = gpd.GeoSeries([poly], crs=crs)
 
     fig, (ax1, ax2) = plt.subplots(1, 2)
-    beijing_trips = points[points.within(spoly.geometry.iloc[0])]
-    beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
+    beijing_trips = pd.DataFrame(points[points.within(spoly.geometry.iloc[0])])
+    beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda multipt:
+                                                             geometry.MultiPoint([geometry.Point(pt.y, pt.x)
+                                                                                  for pt in multipt]))
+    beijing_trips = gpd.GeoDataFrame(beijing_trips)
+    # beijing_trips.plot()
     beijing_trips.plot(ax=ax1)
-    if p_distance > 0:
-        beijing_trips = spatial_cloaking(points, bounding_box, privacy_distance=p_distance)
-        beijing_trips = beijing_trips.drop("index_right", axis=1)
-        beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
-        beijing_trips.plot(ax=ax2)
+    if privacy_scheme > 0:
+        if privacy_scheme == 1:
+            beijing_trips = spatial_cloaking(points, bounding_box, privacy_distance=p_distance)
+            beijing_trips = beijing_trips.drop("index_right", axis=1)
+        else:
+            # if isinstance(beijing_trips["geometry"][0], geometry.Point):
+            #     beijing_trips["geometry2"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
+            # else:
+            #     beijing_trips["geometry2"] = beijing_trips.geometry.apply(lambda multipt:
+            #                                                               geometry.MultiPoint(
+            #                                                                   [geometry.Point(pt.y, pt.x)
+            #                                                                    for pt in multipt]))
+            beijing_trips["geometry2"] = beijing_trips["geometry"].apply(lambda multipt:
+                                                geometry.MultiPoint([geometry.Point(
+                                                    addLaplaceNoise(
+                                                        differential_epsilon, [pt.y, pt.x]))
+                                                    for pt in multipt.geoms]))
+            # beijing_trips["geometry2"] = beijing_trips["geometry2"].apply(lambda multipt:
+            #                                                               geometry.MultiPoint([geometry.Point(
+            #                                                                   addLaplaceNoise(
+            #                                                                       differential_epsilon,
+            #                                                                       polar_coordinates(pt,
+            #                                                                                         center_point=poly.centroid)))
+            #                                                                   for pt in multipt.geoms]))
+            # beijing_trips["geometry2"] = \
+            #     beijing_trips["geometry2"].apply(lambda multipt:
+            #                                      geometry.MultiPoint([geometry.Point(
+            #                                          polar_to_coordinates(pt.x, pt.y, center_point=poly.centroid))
+            #                                          for pt in multipt.geoms]))
+
+            if isinstance(beijing_trips["geometry"][0], geometry.Point):
+                beijing_trips["geometry2"] = beijing_trips.geometry2.apply(lambda pt: geometry.Point(pt.y, pt.x))
+            else:
+                beijing_trips["geometry2"] = beijing_trips.geometry2.apply(lambda multipt:
+                                                                         geometry.MultiPoint([geometry.Point(pt.y, pt.x)
+                                                                                              for pt in multipt]))
+            beijing_trips = beijing_trips.set_geometry("geometry2")
+            beijing_trips = beijing_trips.drop("geometry", axis=1)
+            beijing_trips.rename_geometry("geometry", inplace=True)
+
+        beijing_trips.plot(ax=ax2, color="red")
+
     print('Number of points within Beijing: ', beijing_trips.shape[0])
     plt.show()
 
     # REVERSE BACK
-    beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
-
+    if isinstance(beijing_trips["geometry"][0], geometry.Point):
+        beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
+    else:
+        beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda multipt:
+                                                                 geometry.MultiPoint([geometry.Point(pt.y, pt.x)
+                                                                                      for pt in multipt]))
+    # beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda pt: geometry.Point(pt.y, pt.x))
+    # beijing_trips["geometry"] = beijing_trips.geometry.apply(lambda multipt:
+    #                                                          geometry.MultiPoint([geometry.Point(pt.y, pt.x)
+    #                                                                               for pt in multipt]))
     df = pd.DataFrame(beijing_trips)
-    dates = pd.to_datetime(df.time)
+    dates = pd.to_datetime(df.time_x)
 
-    df["month"] = dates.apply(lambda x: x.month)
-    df["year"] = dates.apply(lambda x: x.year)
+    df["month"] = dates.apply(lambda dt: dt.month)
+    df["year"] = dates.apply(lambda dt: dt.year)
     return df
 
 
 def coord_distance(lat1, lon1, lat2, lon2):
     """
-    Returns distance between two coordinates
+    Returns distance between two coordinates in km
     :param lat1:
     :param lon1:
     :param lat2:
     :param lon2:
     :return:
     """
-    R = 6373.0
+    R = 6371.0
     dlon = math.radians(lon2) - math.radians(lon1)
     dlat = math.radians(lat2) - math.radians(lat1)
 
@@ -198,7 +246,13 @@ def grid_data():
     urban_vit_gdf = gpd.GeoDataFrame(urban_vit_df, crs=crs, geometry=urban_vit_df.geometry)
     beijing_urban_vit_gdf = urban_vit_gdf.loc[urban_vit_gdf["E_NAME"] == "Beijing"]
 
-    demographic_data = gpd.sjoin(beijing_urban_vit_gdf, beijing_data_gdf).rename(columns={"index_right": "block"})
+    beijing_data_gdf = beijing_data_gdf.drop("geometry_y", axis=1)
+    # demographic_data = gpd.sjoin(beijing_urban_vit_gdf, beijing_data_gdf).rename(columns={"index_right": "block"})
+    # demographic_data = gpd.sjoin(beijing_data_gdf, beijing_urban_vit_gdf).rename(columns={"index_right": "block"})
+    demographic_data = gpd.sjoin(beijing_data_gdf, beijing_urban_vit_gdf).drop("index", axis=1).reset_index()
+
+    demographic_data = demographic_data.drop("index_right", axis=1)
+    demographic_data.rename(columns={"index": "block"}, inplace=True)
     return gpd.GeoDataFrame(demographic_data, crs=crs, geometry=demographic_data.geometry_x)
 
     # df["geometry"] = df.geometry.apply(lambda x: geometry.Point(x.y, x.x))
@@ -209,13 +263,14 @@ def grid_data():
 
 if __name__ == '__main__':
     trip_types = ["walk", "bike", "car", "taxi", "bus", "subway"]
+    privacy_scheme=2
     results = {}
     grid_gdf = grid_data()
     start = np.datetime64("2008-01", "D")
     end = np.datetime64("2009-01", "D")
     overall_gdf = gpd.GeoDataFrame()
     for x in trip_types:
-        df = process_beijing_trips(mode_ids[x])
+        df = process_beijing_trips(mode_ids[x], privacy_scheme=privacy_scheme)
         gdf = gpd.GeoDataFrame(df, crs=crs, geometry=df.geometry)
         overall_gdf = pd.concat([overall_gdf, gdf])
         #   df = process_beijing_trips()
@@ -246,8 +301,13 @@ if __name__ == '__main__':
     equity_titles = ["Atkinson Equity Measure", "Gender Equity Gap", "Age Equity Gap", "Housing Price Gap",
                      "Amenities Gap"]
     for i in range(len(equity_gaps)):
-        if p_distance > 0:
-            process_graphs(equity_gaps[i], trip_types, equity_titles[i]+"(p="+str(p_distance)+")")
+        # if p_distance > 0:
+        if privacy_scheme > 0:
+            if privacy_scheme == 1:
+                fig_title = equity_titles[i] + "(p=" + str(p_distance) + ")"
+            else:
+                fig_title = equity_titles[i] + "(e=" + str(differential_epsilon) + ")"
+            process_graphs(equity_gaps[i], trip_types, fig_title)
         else:
             process_graphs(equity_gaps[i], trip_types, equity_titles[i])
 
